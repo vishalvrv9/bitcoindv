@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './App.css'
 
+import LineChart from './LineChart'
+
 class App extends Component {
   createFakeData(){
     const data=[]
@@ -15,7 +17,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        Hellloowww!!
+        <LineChart data={this.createFakeData()} />
       </div>
     )
   }
