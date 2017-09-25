@@ -34,9 +34,10 @@ class LineChart extends Component{
 
   makePath(){
     const {data, color}= this.props
-    let pathD= 'M'+this.getSvgX(data[0].x)+' '+this.getSvgY(data[0].y)
+    let pathD= "M "+this.getSvgX(data[0].x)+" "+this.getSvgY(data[0].y)+" "
     pathD+= data.map((point, i)=> {
-      return 'L'+' '+this.getSvgX(point.x)+' '+this.getSvgY(point.y)+' ' })
+      return "L "+this.getSvgX(point.x)+" "+this.getSvgY(point.y)+" "
+    })
     return (
       <path className="linechart_path" d={pathD} style={{stroke:color}}/>
     )
@@ -62,7 +63,7 @@ class LineChart extends Component{
     render(){
       const {svgHeight,svgWidth}=this.props
       return (
-        <svg viewBox={`0 0 ${this.svgWidth} ${this.svgHeight}`}>
+        <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`}>
         {this.makePath()}
         {this.makeAxis()}
         </svg>)
